@@ -3,9 +3,9 @@
 import { motion } from 'framer-motion';
 
 const stats = [
-  { label: 'Years of Excellence', value: '25+' },
+  { label: 'Types of Springs Made', value: '50+' },
   { label: 'Springs Produced', value: '500K+' },
-  { label: 'Global Clients', value: '50+' },
+  { label: 'Clients', value: '50+' },
   { label: 'Quality Assured', value: '100%' },
 ];
 
