@@ -6,27 +6,36 @@ import { FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 const contactInfo = [
   {
     icon: FaMapMarkerAlt,
-    title: 'Visit Us',
+    title: 'Office Address',
     details: [
-      'Plot No. 1, Survey No. 1',
-      'MIDC Industrial Area',
-      'Thane, Maharashtra 400601'
+      '514 Zion Z1, Near Avalon Hotel',
+      'Bodakdev, Ahmedabad',
+      'Gujarat, India'
+    ]
+  },
+  {
+    icon: FaMapMarkerAlt,
+    title: 'Manufacturing Unit',
+    details: [
+      'Godown No.60, Ground Floor',
+      'Sunshine Industrial Hub -1, Navapura',
+      'Changodar, Ahmedabad',
+      'Gujarat 382213'
     ]
   },
   {
     icon: FaPhone,
     title: 'Call Us',
     details: [
-      '+91 (22) 2589-1234',
-      '+91 98765-43210'
+      '+91 7600800472'
     ]
   },
   {
     icon: FaEnvelope,
-    title: 'Email Us',
+    title: 'Email & GST',
     details: [
-      'info@arvatspringtech.com',
-      'sales@arvatspringtech.com'
+      'Email: info@arvatspringtech.com',
+      'GSTIN: 24ACGFA3396M1Z2'
     ]
   }
 ];
