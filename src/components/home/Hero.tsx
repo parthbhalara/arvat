@@ -16,7 +16,7 @@ export default function Hero() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 gradient-bg opacity-90" />
+        <div className="absolute inset-0 gradient-bg opacity-80" />
       </div>
 
       {/* Content */}
@@ -33,8 +33,8 @@ export default function Hero() {
               <span className="text-secondary"> Every Industry</span>
             </h1>
             <p className="text-xl text-gray-100 mb-8 max-w-2xl">
-              Leading manufacturer of custom springs and wire forms, delivering innovative solutions
-              with unmatched quality and precision since 1998.
+              Leading manufacturer of custom springs, delivering innovative solutions
+              with unmatched quality and precision since 2024.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/products" className="btn-secondary">
@@ -58,16 +58,16 @@ export default function Hero() {
           >
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
-                <div className="text-4xl font-bold text-secondary">25+</div>
-                <div className="text-gray-100">Years Experience</div>
+                <div className="text-4xl font-bold text-secondary">50+</div>
+                <div className="text-gray-100">Types of Springs Made</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
-                <div className="text-4xl font-bold text-secondary">500K+</div>
+                <div className="text-4xl font-bold text-secondary">200K+</div>
                 <div className="text-gray-100">Springs Produced</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
-                <div className="text-4xl font-bold text-secondary">50+</div>
-                <div className="text-gray-100">Global Clients</div>
+                <div className="text-4xl font-bold text-secondary">10+</div>
+                <div className="text-gray-100">Clients</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
                 <div className="text-4xl font-bold text-secondary">100%</div>
