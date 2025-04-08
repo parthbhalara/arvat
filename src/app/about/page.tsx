@@ -5,27 +5,22 @@ import Image from 'next/image';
 
 const milestones = [
   {
-    year: '1998',
+    year: '2024',
     title: 'Company Founded',
     description: 'Arvat Springtech was established with a vision to provide high-quality spring solutions to industries.'
   },
   {
-    year: '2005',
-    title: 'ISO Certification',
-    description: 'Achieved ISO 9001:2000 certification for quality management systems.'
-  },
-  {
-    year: '2010',
+    year: '2024',
     title: 'Expansion',
     description: 'Expanded manufacturing facility and increased production capacity.'
   },
   {
-    year: '2015',
+    year: '2025',
     title: 'Global Reach',
     description: 'Started exporting to international markets and established global partnerships.'
   },
   {
-    year: '2020',
+    year: '2025',
     title: 'Technology Upgrade',
     description: 'Invested in state-of-the-art manufacturing equipment and automation.'
   }
@@ -82,7 +77,7 @@ export default function AboutPage() {
         >
           <h2 className="text-base font-semibold leading-7 text-secondary">About Us</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-            Leading Spring Manufacturer Since 1998
+            Leading Spring Manufacturer Since 2024
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Arvat Springtech is a leading manufacturer of precision springs, serving industries
@@ -95,7 +90,7 @@ export default function AboutPage() {
             <div>
               <h3 className="text-2xl font-bold tracking-tight text-primary">Our Story</h3>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Founded in 1998, Arvat Springtech has grown from a small workshop to a state-of-the-art
+                Founded in 2024, Arvat Springtech has grown from a small workshop to a state-of-the-art
                 manufacturing facility. Our journey has been marked by continuous innovation, quality
                 improvement, and customer satisfaction.
               </p>
