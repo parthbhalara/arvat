@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 const navigation = {
   main: [
@@ -19,22 +19,22 @@ const navigation = {
   social: [
     {
       name: 'Facebook',
-      href: '#',
+      href: 'https://www.facebook.com/share/1XXNKxbczE/?mibextid=wwXIfr',
       icon: FaFacebook,
     },
     {
-      name: 'Twitter',
-      href: '#',
-      icon: FaTwitter,
+      name: 'Youtube',
+      href: 'https://youtube.com/@arvatspringtech',
+      icon: FaYoutube,
     },
     {
       name: 'LinkedIn',
-      href: '#',
+      href: 'https://www.linkedin.com/company/arvat-springtech/',
       icon: FaLinkedin,
     },
     {
       name: 'Instagram',
-      href: '#',
+      href: 'https://www.instagram.com/arvatspringtech/',
       icon: FaInstagram,
     },
   ],
@@ -50,10 +50,10 @@ export default function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
             <Link href="/" className="text-2xl font-bold text-white">
-              Arvat
+              Arvat Springtech LLP
             </Link>
             <p className="text-gray-400 text-base">
-              Leading manufacturer of precision springs and wire forms. Quality and innovation since 1990.
+              Leading manufacturer of precision springs and wire forms.
             </p>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
@@ -112,14 +112,14 @@ export default function Footer() {
                 Contact Us
               </h3>
               <div className="mt-4 space-y-4 text-base text-gray-300">
-                <p>123 Spring Street</p>
-                <p>Manufacturing District</p>
-                <p>Industrial City, 12345</p>
+                <p>Godown no. 60, Ground Floor, Sunshine Industrial Hub -1 </p>
+                <p>Navapura, Changodar</p>
+                <p>Ahmedabad, Gujarat 382213</p>
                 <p className="hover:text-white">
-                  <a href="tel:+1234567890">+1 (234) 567-890</a>
+                  <a href="tel:+917600800472">+91 7600800472</a>
                 </p>
                 <p className="hover:text-white">
-                  <a href="mailto:info@arvat.com">info@arvat.com</a>
+                  <a href="mailto:info@arvatspringtech.com">info@arvatspringtech.com</a>
                 </p>
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function Footer() {
         </div>
         <div className="mt-12 border-t border-gray-700 pt-8">
           <p className="text-base text-gray-400 xl:text-center">
-            &copy; {new Date().getFullYear()} Arvat Springtech. All rights reserved.
+            &copy; {new Date().getFullYear()} Arvat Springtech LLP. All rights reserved.
           </p>
         </div>
       </div>

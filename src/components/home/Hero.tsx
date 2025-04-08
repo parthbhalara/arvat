@@ -59,14 +59,14 @@ export default function Hero() {
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
                 <div className="text-4xl font-bold text-secondary">25+</div>
-                <div className="text-gray-100">Years Experience</div>
+                <div className="text-gray-100">Years of Engineering Excellence</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
                 <div className="text-4xl font-bold text-secondary">500K+</div>
-                <div className="text-gray-100">Springs Produced</div>
+                <div className="text-gray-100">Precision Springs Delivered</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
-                <div className="text-4xl font-bold text-secondary">50+</div>
+                <div className="text-4xl font-bold text-secondary">10+</div>
                 <div className="text-gray-100">Global Clients</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
