@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 import Link from 'next/link';
-import BrochureDownload from '@/components/BrochureDownload';
 
 const sectors = [
   {
@@ -150,72 +149,73 @@ export default function ApplicationsPage() {
 
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-        <motion.div
-          className="mx-auto max-w-2xl text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-base font-semibold leading-7 text-secondary">Applications</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-            Industry Solutions
-          </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Discover how our precision springs serve various industries with reliable
-            and high-performance solutions.
-          </p>
-        </motion.div>
-
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {sectors.map((sector, index) => (
-              <motion.div
-                key={sector.id}
-                className="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-              >
-                {/* Image Section with Fallback */}
-                <div className="relative h-48 w-full bg-gray-100">
-                  {!imageErrors[sector.id] ? (
-                    <Image
-                      src={sector.image}
-                      alt={sector.name}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      onError={() => handleImageError(sector.id)}
-                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                    />
-                  ) : (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-secondary">
-                        {sector.icon}
-                      </div>
-                    </div>
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                </div>
-
-                {/* Content Section */}
-                <div className="p-6 relative">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="text-secondary">{sector.icon}</div>
-                    <h3 className="text-xl font-semibold text-primary">{sector.name}</h3>
-                  </div>
-                  <p className="text-gray-600">
-                    {sector.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+      {/* Hero Section */}
+      <div className="relative isolate overflow-hidden bg-gradient-to-b from-primary/20 to-white">
+        <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
+          <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                Industry Applications
+              </h1>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Discover how our precision springs serve various industries with reliable
+                and high-performance solutions tailored to specific needs.
+              </p>
+            </motion.div>
           </div>
         </div>
+      </div>
 
-        {/* Brochure Download Section */}
-        <BrochureDownload />
+      {/* Main Content */}
+      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {sectors.map((sector, index) => (
+            <motion.div
+              key={sector.id}
+              className="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+            >
+              {/* Image Section with Fallback */}
+              <div className="relative h-48 w-full bg-gray-100">
+                {!imageErrors[sector.id] ? (
+                  <Image
+                    src={sector.image}
+                    alt={sector.name}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    onError={() => handleImageError(sector.id)}
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-secondary">
+                      {sector.icon}
+                    </div>
+                  </div>
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              </div>
+
+              {/* Content Section */}
+              <div className="p-6 relative">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="text-secondary">{sector.icon}</div>
+                  <h3 className="text-xl font-semibold text-primary">{sector.name}</h3>
+                </div>
+                <p className="text-gray-600">
+                  {sector.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );

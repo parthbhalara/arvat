@@ -5,21 +5,25 @@ import Image from 'next/image';
 
 const milestones = [
   {
+    id: '2024-founding',
     year: '2024',
     title: 'Company Founded',
     description: 'Arvat Springtech was established with a vision to provide high-quality spring solutions to industries.'
   },
   {
+    id: '2024-expansion',
     year: '2024',
     title: 'Expansion',
     description: 'Expanded manufacturing facility and increased production capacity.'
   },
   {
+    id: '2025-global',
     year: '2025',
     title: 'Global Reach',
     description: 'Started exporting to international markets and established global partnerships.'
   },
   {
+    id: '2025-tech',
     year: '2025',
     title: 'Technology Upgrade',
     description: 'Invested in state-of-the-art manufacturing equipment and automation.'
@@ -68,45 +72,49 @@ const values = [
 export default function AboutPage() {
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-        <motion.div
-          className="mx-auto max-w-2xl text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-base font-semibold leading-7 text-secondary">About Us</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-            Leading Spring Manufacturer Since 2024
-          </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Arvat Springtech is a leading manufacturer of precision springs, serving industries
-            worldwide with high-quality, reliable spring solutions.
-          </p>
-        </motion.div>
-
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
-            <div>
-              <h3 className="text-2xl font-bold tracking-tight text-primary">Our Story</h3>
+      {/* Hero Section */}
+      <div className="relative isolate overflow-hidden bg-gradient-to-b from-primary/20 to-white">
+        <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
+          <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                About Arvat Springtech
+              </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Founded in 2024, Arvat Springtech has grown from a small workshop to a state-of-the-art
-                manufacturing facility. Our journey has been marked by continuous innovation, quality
-                improvement, and customer satisfaction.
+                Leading manufacturer of precision springs, serving industries worldwide with high-quality, 
+                reliable spring solutions since 2024.
               </p>
-              <p className="mt-4 text-lg leading-8 text-gray-600">
-                Today, we are proud to serve customers across various industries, from automotive to
-                aerospace, with our high-quality spring solutions.
-              </p>
-            </div>
-            <div className="relative h-96 overflow-hidden rounded-xl">
-              <Image
-                src="/images/about/factory.jpg"
-                alt="Our Manufacturing Facility"
-                fill
-                className="object-cover"
-              />
-            </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
+          <div>
+            <h3 className="text-2xl font-bold tracking-tight text-primary">Our Story</h3>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              Founded in 2024, Arvat Springtech has grown from a small workshop to a state-of-the-art
+              manufacturing facility. Our journey has been marked by continuous innovation, quality
+              improvement, and customer satisfaction.
+            </p>
+            <p className="mt-4 text-lg leading-8 text-gray-600">
+              Today, we are proud to serve customers across various industries, from automotive to
+              aerospace, with our high-quality spring solutions.
+            </p>
+          </div>
+          <div className="relative h-96 overflow-hidden rounded-xl">
+            <Image
+              src="/images/about/factory.jpg"
+              alt="Our Manufacturing Facility"
+              fill
+              className="object-cover"
+            />
           </div>
         </div>
 
@@ -135,7 +143,7 @@ export default function AboutPage() {
           <div className="space-y-8">
             {milestones.map((milestone, index) => (
               <motion.div
-                key={milestone.year}
+                key={`${milestone.year}-${milestone.title}`}
                 className="relative pl-8 border-l-2 border-secondary"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}

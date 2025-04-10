@@ -129,90 +129,74 @@ const products = [
 export default function ProductsPage() {
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-        <motion.div
-          className="mx-auto max-w-2xl text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-base font-semibold leading-7 text-secondary">Our Products</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-            Comprehensive Spring Solutions
-          </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Discover our wide range of high-quality springs, each designed and manufactured
-            to meet specific industrial requirements with precision and reliability.
-          </p>
-        </motion.div>
-
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <div className="space-y-16">
-            {products.map((product, index) => (
-              <motion.div
-                key={product.id}
-                id={product.id}
-                className="scroll-mt-16"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-              >
-                <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
-                  <div className="relative h-96 overflow-hidden rounded-xl">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold tracking-tight text-primary">{product.name}</h3>
-                    <p className="mt-6 text-lg leading-8 text-gray-600">{product.description}</p>
-                    
-                    <div className="mt-10">
-                      <h4 className="text-lg font-semibold text-primary">Key Features</h4>
-                      <ul className="mt-4 space-y-2">
-                        {product.features.map((feature) => (
-                          <li key={feature} className="flex items-center text-gray-600">
-                            <svg className="h-5 w-5 text-secondary mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="mt-10">
-                      <h4 className="text-lg font-semibold text-primary">Applications</h4>
-                      <ul className="mt-4 space-y-2">
-                        {product.applications.map((application) => (
-                          <li key={application} className="flex items-center text-gray-600">
-                            <svg className="h-5 w-5 text-secondary mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                            {application}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="mt-10">
-                      <a
-                        href="/contact"
-                        className="btn-primary inline-flex items-center"
-                      >
-                        Get a Quote
-                        <span aria-hidden="true" className="ml-2">→</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+      {/* Hero Section */}
+      <div className="relative isolate overflow-hidden bg-gradient-to-b from-primary/20 to-white">
+        <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
+          <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                Our Spring Solutions
+              </h1>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Discover our comprehensive range of high-quality springs designed for various industrial applications. Each product is manufactured with precision and reliability in mind.
+              </p>
+            </motion.div>
           </div>
+        </div>
+      </div>
+
+      {/* Products Grid */}
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-24 sm:py-32">
+        <div className="grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:max-w-none lg:grid-cols-3 mx-auto">
+          {products.map((product) => (
+            <motion.article
+              key={product.id}
+              className="flex flex-col items-start"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="relative w-full">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  width={500}
+                  height={300}
+                  className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                />
+                <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+              </div>
+              <div className="max-w-xl">
+                <div className="mt-8 flex items-center gap-x-4 text-xs">
+                  <h3 className="text-lg font-semibold leading-6 text-gray-900">
+                    {product.name}
+                  </h3>
+                </div>
+                <p className="mt-4 text-sm leading-6 text-gray-600">{product.description}</p>
+                <div className="mt-6">
+                  <h4 className="text-sm font-semibold text-gray-900">Key Features:</h4>
+                  <ul className="mt-2 list-disc pl-5 text-sm text-gray-600">
+                    {product.features.map((feature, index) => (
+                      <li key={index}>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mt-4">
+                  <h4 className="text-sm font-semibold text-gray-900">Applications:</h4>
+                  <ul className="mt-2 list-disc pl-5 text-sm text-gray-600">
+                    {product.applications.map((application, index) => (
+                      <li key={index}>{application}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </motion.article>
+          ))}
         </div>
       </div>
     </div>

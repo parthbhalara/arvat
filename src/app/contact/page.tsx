@@ -48,65 +48,74 @@ const contactInfo = [
 
 export default function ContactPage() {
   return (
-    <div className="section-padding bg-gray-50">
-      <div className="mx-auto max-w-7xl container-padding">
-        <motion.div
-          className="mx-auto max-w-2xl text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className="section-title">Contact Us</h1>
-          <p className="body-text mt-4">
-            Get in touch with us for custom spring solutions. Our team is ready to assist you
-            with any inquiries about our products and services.
-          </p>
-        </motion.div>
+    <div className="bg-white">
+      {/* Hero Section */}
+      <div className="relative isolate overflow-hidden bg-gradient-to-b from-primary/20 to-white">
+        <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
+          <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                Contact Us
+              </h1>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Get in touch with us for custom spring solutions. Our team is ready to assist you
+                with any inquiries about our products and services.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </div>
 
-        <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-2">
-          {/* Contact Information */}
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            {contactInfo.map((item, index) => (
-              <motion.div
-                key={item.title}
-                className="card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-              >
-                <div className="flex items-center space-x-4">
-                  <div className="flex-shrink-0">
-                    <item.icon className="h-6 w-6 text-secondary" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-primary">{item.title}</h3>
-                    <div className="mt-2 space-y-1">
-                      {item.details.map((detail, i) => (
-                        <p key={i} className="body-text">
-                          {detail}
-                        </p>
-                      ))}
+      <div className="section-padding bg-white">
+        <div className="mx-auto max-w-7xl container-padding">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Contact Information */}
+            <motion.div
+              className="space-y-6"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              {contactInfo.map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  className="card hover:shadow-lg transition-shadow duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 pt-1">
+                      <item.icon className="h-6 w-6 text-secondary" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-primary">{item.title}</h3>
+                      <div className="mt-2 space-y-1">
+                        {item.details.map((detail, i) => (
+                          <p key={i} className="body-text">
+                            {detail}
+                          </p>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </motion.div>
 
             {/* Map */}
             <motion.div
-              className="card overflow-hidden"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              className="card overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              transition={{ duration: 0.8 }}
             >
               <div className="relative w-full" style={{ paddingBottom: '75%' }}>
                 <iframe
@@ -121,89 +130,7 @@ export default function ContactPage() {
                 />
               </div>
             </motion.div>
-          </motion.div>
-
-          {/* Contact Form */}
-          <motion.div
-            className="card"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus-ring"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus-ring"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus-ring"
-                  required
-                />
-              </div>
-
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-700">
-                  Company
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus-ring"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus-ring"
-                  required
-                />
-              </div>
-
-              <div>
-                <button type="submit" className="btn-primary w-full">
-                  Send Message
-                </button>
-              </div>
-            </form>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import BrochureDownload from '@/components/BrochureDownload';
 
 export default function VideoSection() {
   return (
@@ -24,7 +25,7 @@ export default function VideoSection() {
         </motion.div>
 
         <motion.div
-          className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl"
+          className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -40,6 +41,13 @@ export default function VideoSection() {
             />
           </div>
         </motion.div>
+
+        <BrochureDownload 
+          title="Download Our Complete Product Brochure"
+          description="Get detailed information about our spring solutions and capabilities. Learn about our specifications, applications, and success stories."
+          brochurePath="/brochures/applications-brochure.pdf"
+          brochureName="Download Product Brochure"
+        />
       </div>
     </div>
   );

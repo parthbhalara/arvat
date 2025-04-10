@@ -7,15 +7,19 @@ import Link from 'next/link';
 interface BrochureDownloadProps {
   title?: string;
   description?: string;
+  brochurePath?: string;
+  brochureName?: string;
 }
 
 export default function BrochureDownload({ 
   title = "Download Our Complete Applications Brochure",
-  description = "Get detailed information about our spring solutions across all industries. Learn about our capabilities, specifications, and success stories."
+  description = "Get detailed information about our spring solutions across all industries. Learn about our capabilities, specifications, and success stories.",
+  brochurePath = "/brochures/applications-brochure.pdf",
+  brochureName = "Download Brochure"
 }: BrochureDownloadProps) {
   return (
     <motion.div
-      className="mt-24 sm:mt-32 relative isolate overflow-hidden bg-gradient-to-br from-primary via-primary-dark to-primary px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16"
+      className="mt-20 sm:mt-10 relative isolate overflow-hidden bg-gradient-to-br from-primary via-primary-dark to-primary px-6 py-16 text-center shadow-2xl sm:rounded-1xl sm:px-1"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -29,12 +33,12 @@ export default function BrochureDownload({
       </p>
       <div className="mt-10 flex items-center justify-center gap-x-6">
         <Link
-          href="/brochures/applications-brochure.pdf"
+          href={brochurePath}
           className="btn-secondary inline-flex items-center"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Download Brochure
+          {brochureName}
           <svg
             className="ml-2 h-5 w-5"
             viewBox="0 0 20 20"
