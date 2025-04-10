@@ -2,13 +2,6 @@
 
 import { motion } from 'framer-motion';
 
-const stats = [
-  { label: 'Years of Engineering Excellence', value: '25+' },
-  { label: 'Precision Springs Delivered', value: '500K+' },
-  { label: 'Global Clients', value: '10+' },
-  { label: 'Quality Assured', value: '100%' },
-];
-
 export default function VideoSection() {
   return (
     <div className="section-padding gradient-bg">
@@ -46,35 +39,6 @@ export default function VideoSection() {
               className="absolute top-0 left-0 w-full h-full"
             />
           </div>
-        </motion.div>
-
-        <motion.div
-          className="mt-16 grid grid-cols-2 gap-8 sm:grid-cols-4"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              className="text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.1 * index }}
-            >
-              <div className="relative">
-                <div className="absolute -inset-2 bg-secondary/20 rounded-lg blur" />
-                <div className="relative bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                  <dt className="text-sm font-medium text-gray-100">{stat.label}</dt>
-                  <dd className="text-4xl font-bold tracking-tight text-secondary mt-2">
-                    {stat.value}
-                  </dd>
-                </div>
-              </div>
-            </motion.div>
-          ))}
         </motion.div>
       </div>
     </div>
