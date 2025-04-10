@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
+import Link from 'next/link';
+import BrochureDownload from '@/components/BrochureDownload';
 
 const sectors = [
   {
@@ -211,6 +213,9 @@ export default function ApplicationsPage() {
             ))}
           </div>
         </div>
+
+        {/* Brochure Download Section */}
+        <BrochureDownload />
       </div>
     </div>
   );
