@@ -34,7 +34,7 @@ export default function Hero() {
             </h1>
             <p className="text-xl text-gray-100 mb-8 max-w-2xl">
               Leading manufacturer of custom springs and wire forms, delivering innovative solutions
-              with unmatched quality and precision since 1998.
+              with unmatched quality and precision since 2024.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/products" className="btn-secondary">

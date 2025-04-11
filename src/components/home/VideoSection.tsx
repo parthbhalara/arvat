@@ -43,10 +43,10 @@ export default function VideoSection() {
         </motion.div>
 
         <BrochureDownload 
-          title="Download Our Complete Product Brochure"
+          title="Download Our Brochure"
           description="Get detailed information about our spring solutions and capabilities. Learn about our specifications, applications, and success stories."
           brochurePath="/brochures/applications-brochure.pdf"
-          brochureName="Download Product Brochure"
+          brochureName="Download Brochure"
         />
       </div>
     </div>
